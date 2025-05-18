@@ -24,3 +24,86 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-animated-gradient {
+  background: linear-gradient(270deg, #130f18, #1e1a28, #2a223c, #1a1622);
+  background-size: 600% 600%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+.rounded-xl{
+  border-radius: .75rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.gap-0\.5{
+  gap:0.125rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid
+;
+}
+
+.bg-theme-neutral-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(94 91 113 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-20 {
+    --tw-bg-opacity: 0.2;
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-spin-slow {
+    animation: spin 20s linear infinite;
+}
+@keyframes spin{
+  100% {
+    transform: rotate(1turn);
+}
+}
+
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.sm\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
