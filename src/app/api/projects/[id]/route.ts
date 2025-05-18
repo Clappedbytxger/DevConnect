@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextResponse,NextRequest } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 
-export async function DELETE({ params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest,context: { params: { id: string } }) {
   const session = await getCurrentUser();
 
   if (!session || !session.user?.email) {
@@ -12,7 +12,7 @@ export async function DELETE({ params }: { params: { id: string } }) {
   try {
     // Stelle sicher, dass das Projekt dem aktuellen User gehört
     const project = await prisma.project.findUnique({
-      where: { id: params.id },
+      where: { id: context.params.id },
     });
 
     if (!project) {
@@ -28,7 +28,7 @@ export async function DELETE({ params }: { params: { id: string } }) {
     }
 
     await prisma.project.delete({
-      where: { id: params.id },
+      where: { id: context.params.id },
     });
 
     return NextResponse.json({ success: true }, { status: 200 });
