@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE({ params }: { params: { id: string } }) {
   const session = await getCurrentUser();
 
   if (!session || !session.user?.email) {

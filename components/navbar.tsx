@@ -38,7 +38,7 @@ export default function Navbar() {
   href={`/profile/${session.user?.id}`} // Wichtig: Stelle sicher, dass `id` im Session-Objekt enthalten ist!
   className="flex items-center space-x-2 hover:underline"
 >
-              <img
+              <Image
                 src={session.user?.image || '/images/default-avatar.png'}
                 alt={session.user?.name || 'User'}
                 className="w-8 h-8 rounded-full"

@@ -1,7 +1,5 @@
 // app/page.tsx
 
-import Image from "next/image";
-
 export default function Home() {
   return (
       <><div className="fixed inset-0 -z-10 bg-animated-gradient" /><main className="max-w-6xl mx-auto px-4">

@@ -59,7 +59,7 @@ export default function UploadProjectPage() {
     return <p>Lade...</p>
   }
 
-  const uploadImage = async (file: File): Promise<string> => {
+  /*const uploadImage = async (file: File): Promise<string> => {
     const formData = new FormData()
     formData.append("file", file)
   
@@ -74,7 +74,7 @@ export default function UploadProjectPage() {
   
     const result = await res.json()
     return result.url // z. B. "/uploads/deinbild.jpg"
-  }
+  }*/
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]

@@ -8,7 +8,7 @@ type LikeButtonProps = {
   liked?: boolean
 }
 
-export default function LikeButton({ projectId , liked }: LikeButtonProps) {
+export default function LikeButton({ projectId }: LikeButtonProps) {
   const [isLiked, setIsLiked] = useState(false)
 
   useEffect(() => {

@@ -13,7 +13,7 @@ const tagColors: { [key: string]: string } = {
     "Machine Learning": "bg-purple-500 text-white",
     "Open Source": "bg-red-500 text-white",
   }
-const projectDetails: {
+/*const projectDetails: {
   [key: string]: {
     id: string;
     title: string;
@@ -39,7 +39,7 @@ const projectDetails: {
     tags: ["AI", "Machine Learning", "Open Source"],
     githubUrl: "https://github.com/beispiel/ai-chatbot"
   },
-};
+};*/
 
 export default async function ProjectDetail({ params }: { params: { id: string } }) {
 

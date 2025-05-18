@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { getSession } from "next-auth/react";
 import ProjectCard from '@/components/ProjectCard'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation';
 
 interface Project {
   id: string;
@@ -23,7 +22,6 @@ export default function Dashboard() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     const fetchProjects = async () => {

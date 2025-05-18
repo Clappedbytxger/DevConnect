@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import { JWT } from "next-auth/jwt"
-import { NextAuthOptions, User, Account, Profile, Session } from "next-auth"
+import { NextAuthOptions, User, Session } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 import prisma from "@/lib/prisma" 
 
