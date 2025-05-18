@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export default function UploadProjectPage() {
-  const { data: session, status } = useSession()
+  const { status } = useSession()
   const router = useRouter()
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function UploadProjectPage() {
   const [githubUrl, setGithubUrl] = useState("")
   const [imageUrl, setImageUrl] = useState('')
   const [tags, setTags] = useState<string[]>([])
-  const [image, setImage] = useState<File | null>(null)
+  const [, setImage] = useState<File | null>(null)
 
   const availableTags = ["Next.js", "AI", "Firebase", "Beginner", "Open Source"].join(",")
 
@@ -92,7 +92,9 @@ export default function UploadProjectPage() {
       if (res.ok) {
         const data = await res.json()
         setImageUrl(data.url) // ✅ die URL kommt vom Server
-        setImage(file)        // optional, falls du das File noch brauchst
+        setImage(file)
+        
+               // optional, falls du das File noch brauchst
       } else {
         const error = await res.json()
         alert('Fehler beim Hochladen: ' + error.error)
